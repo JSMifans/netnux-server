@@ -36,7 +36,7 @@ public class Response<T> {
     }
 
     public static <T> Response<T> success(T data) {
-        return new Response<>(200, "Success", data);
+        return new Response<>(200, "操作成功", data);
     }
 
     public static <T> Response<T> error(String message) {

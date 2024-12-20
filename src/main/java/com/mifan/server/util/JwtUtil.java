@@ -7,7 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
 
 public class JwtUtil {
-    private static final String SECRET_KEY = "your_secret_key";
+    private static final String SECRET_KEY = "bXlTZWNyZXRLZXlGb3JKV1Q=";
     private static final long EXPIRATION_TIME = 86400000; // 1 day
 
     public static String generateToken(String username) {

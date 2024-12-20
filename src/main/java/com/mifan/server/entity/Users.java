@@ -3,6 +3,9 @@ package com.mifan.server.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
@@ -39,6 +42,7 @@ public class Users implements Serializable {
     /**
      * 密码哈希
      */
+    @JsonIgnore
     private String passwordHash;
 
     /**
@@ -59,7 +63,12 @@ public class Users implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
 
-
+    /**
+     * 角色名称
+     */
+    @TableField(exist = false)
+    private String roleName;
 }
