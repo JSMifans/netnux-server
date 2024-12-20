@@ -6,7 +6,7 @@ server:
 # 数据库配置
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/NetNut
+    url: jdbc:mysql://106.14.126.216:3306/NetNut
     username: root
     password: 120130
     driver-class-name: com.mysql.cj.jdbc.Driver

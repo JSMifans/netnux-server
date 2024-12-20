@@ -1,9 +1,9 @@
 package com.mifan.server.controller;
 
-import com.mifan.server.mapper.UsersMapper;
+import com.mifan.server.mapper.UmsUsersMapper;
 import com.mifan.server.util.JwtUtil;
 import com.mifan.server.util.Response;
-import com.mifan.server.entity.Users;
+import com.mifan.server.entity.UmsUsers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,19 +21,19 @@ import javax.annotation.Resource;
  * @since 2024-12-19
  */
 @RestController
-@RequestMapping("/users")
-public class UsersController {
+@RequestMapping("/ums-users")
+public class UmsUsersController {
 
     @Resource
-    private UsersMapper usersMapper;
+    private UmsUsersMapper umsUsersMapper;
 
     @GetMapping("info")
-    public Response<Users> userinfo(@RequestHeader("Authorization") String token) {
+    public Response<UmsUsers> userinfo(@RequestHeader("Authorization") String token) {
         // 从令牌中提取用户标识符（如手机号）
         String phone = JwtUtil.extractClaims(token.substring(7)).getSubject();
 
         // 查询用户信息，包括角色信息
-        Users user = usersMapper.selectByPhoneWithRole(phone);
+        UmsUsers user = umsUsersMapper.selectByPhoneWithRole(phone);
         if (user == null) {
             return Response.error("用户不存在");
         }

@@ -1,18 +1,18 @@
 package com.mifan.server.mapper;
 
-import com.mifan.server.entity.Roles;
+import com.mifan.server.entity.UmsRoles;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
- * 存储角色信息 Mapper 接口
+ * 角色表 Mapper 接口
  * </p>
  *
- * @author Milan
- * @since 2024-12-19
+ * @author Mifan
+ * @since 2024-12-20
  */
 @Mapper
-public interface RolesMapper extends BaseMapper<Roles> {
+public interface UmsRolesMapper extends BaseMapper<UmsRoles> {
 
 }

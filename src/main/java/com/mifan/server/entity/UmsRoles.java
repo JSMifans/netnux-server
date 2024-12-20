@@ -20,8 +20,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("roles")
-public class Roles implements Serializable {
+@TableName("ums_roles")
+public class UmsRoles implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

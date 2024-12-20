@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 存储角色信息 前端控制器
+ * 角色表 前端控制器
  * </p>
  *
- * @author Milan
- * @since 2024-12-19
+ * @author Mifan
+ * @since 2024-12-20
  */
 @RestController
-@RequestMapping("/roles")
-public class RolesController {
+@RequestMapping("/ums-roles")
+public class UmsRolesController {
 
 }
