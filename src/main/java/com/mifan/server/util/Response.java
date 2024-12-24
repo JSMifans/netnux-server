@@ -1,22 +1,22 @@
 package com.mifan.server.util;
 
 public class Response<T> {
-    private int status;
+    private int code;
     private String message;
     private T data;
 
-    public Response(int status, String message, T data) {
-        this.status = status;
+    public Response(int code, String message, T data) {
+        this.code = code;
         this.message = message;
         this.data = data;
     }
 
-    public int getStatus() {
-        return status;
+    public int getCode() {
+        return code;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getMessage() {

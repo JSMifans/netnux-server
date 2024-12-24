@@ -27,8 +27,8 @@ public class UmsUsersController {
     @Resource
     private UmsUsersMapper umsUsersMapper;
 
-    @GetMapping("info")
-    public Response<UmsUsers> userinfo(@RequestHeader("Authorization") String token) {
+    @GetMapping("userInfo")
+    public Response<UmsUsers> userInfo(@RequestHeader("Authorization") String token) {
         // 从令牌中提取用户标识符（如手机号）
         String phone = JwtUtil.extractClaims(token.substring(7)).getSubject();
 

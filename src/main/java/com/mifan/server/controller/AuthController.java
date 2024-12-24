@@ -22,6 +22,9 @@ public class AuthController {
 
     @PostMapping("/register")
     public Response<String> register(@RequestBody UmsUsers umsUsers) {
+
+        System.out.println(umsUsers);
+
         // 检查手机号唯一性
         if (umsUsersMapper.selectByPhone(umsUsers.getPhone()) != null) {
             return Response.error("手机号已被注册");
@@ -38,7 +41,7 @@ public class AuthController {
 
         // 将用户信息存入数据库
         umsUsersMapper.insert(umsUsers);
-        return Response.success("注册成功");
+        return Response.success(null);
     }
 
 
