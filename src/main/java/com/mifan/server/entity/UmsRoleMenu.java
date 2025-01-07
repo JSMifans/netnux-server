@@ -1,7 +1,6 @@
 package com.mifan.server.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
@@ -12,41 +11,40 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 存储角色信息
+ * 角色菜单关联表
  * </p>
  *
- * @author Milan
- * @since 2024-12-19
+ * @author Mifan
+ * @since 2025-01-02
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("ums_roles")
-public class UmsRoles implements Serializable {
+@TableName("ums_role_menu")
+public class UmsRoleMenu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 角色ID
+     * 主键ID
      */
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
-     * 角色名称
+     * 角色ID
      */
-    private String name;
+    private Long roleId;
 
     /**
-     * 角色描述
+     * 菜单ID
      */
-    private String description;
+    private Long menuId;
 
     /**
      * 创建时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createdAt;
+    private LocalDateTime createTime;
 
 
 }
